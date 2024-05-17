@@ -49,11 +49,11 @@
 
  1.  _**Re-Host**_ : Lift and shift ( running on onpremesis = running in the cloud )
 
-    ![alt text](shots/4.PNG)
+ ![alt text](shots/4.PNG)
 
  2. _**Re-platform**_ : Lift tinker and shift ( lifting with approximately required changes )
 
-    ![alt text](shots/5.PNG)
+ ![alt text](shots/5.PNG)
 
  3. _**Re-factor/Re-architect**_ : Re-write the complete application in a modern cloud native way ( example : shifting to microservices )
 
