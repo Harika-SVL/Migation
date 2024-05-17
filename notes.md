@@ -1,47 +1,37 @@
-### Story of OrganicIndiaCorp
+### Story of Organic India Corp ( some random organisation )
 
-* This organization runs an ecommerce application for selling organic fmcg
+* This organization runs an e-commerce application for selling organic fmcg
 * This organization has datacenter in hyderabad
 
 ![alt text](shots/1.PNG)
 
-### Problems
+#### Problems
 
-* From the 1 – 5 of every month orders increase. Right now OrganicIndiaCorp has 16 vms where they are running backend services. Inspite of this from 1-5 customers are facing latency issues and slow responses
+* From the 1 – 5 of every month orders increase. Right now Organic India Corp has 16 VMs where they are running backend services. Inspite of this from 1-5 customers are facing latency issues and slow responses
 * Right now this organization is running only in one data center which is a single point of failure, so they have one more datacenter with same number of servers in noida.
-* So, architect of OrganicIndiaCorp has suggested to move to AWS
+* So, architect of Organic India Corp has suggested to move to AWS
 
-### How can AWS Solve these problems
+#### How can AWS Solve these problems ?
 
-* Lets understand basic merits of cloud (AWS)
-    * Global presence
-    * Elasticity: Automatically increasing and decreasing the resources based on some dynamic metrics
-    * Disaster Recovery is easier to setup
-    * Pay as you go.
+* Let's understand basic merits of cloud (AWS)
+    * _**Global presence**_
+    * _**Elasticity**_ : Automatically increasing and decreasing the resources based on some dynamic metrics
+    * _**Disaster Recovery**_ is easier to setup
+    * _**Pay as you go**_
 
-### Service Models: IaaS vs PaaS vs SaaS
+### Service Models : IaaS  v/s PaaS  v/s SaaS 
 
 ![alt text](shots/2.PNG)
 
-### How to Move to AWS
+#### How to Move to AWS ?
 
-* Migration: i.e. move the applications/data on your physical servers into AWS
-* Migration based on workloads is classified into 3 types
-    * Server Migration
-    * Database Migration
-    * Storage Migration
+* _**Migration**_ : i.e. move the applications / data on your physical servers into AWS
+* Migration based on workloads is classified into three types :
+  1. Server Migration
+  2. Database Migration
+  3. Storage Migration
 
-### Self-learning (3 – days)
-
-* Grooming Sessions: 
-
-    [ Refer Here : https://www.youtube.com/watch?v=6hRzUNLmZ0E&list=PLuVH8Jaq3mLsYeR_xaW0RW1KR9BZKFBT4 ]
-
-* Cloud Essentials: 
-
-    [ Refer Here : https://www.youtube.com/watch?v=nd1a0bTlqNI&list=PLuVH8Jaq3mLuwOIlTbyr86O2GYS6mPvM9 ]
-
-### OrganicIndiaCorp Application Architecture
+### Organic India Corp Application Architecture
 
 ![alt text](shots/3.PNG)
 
