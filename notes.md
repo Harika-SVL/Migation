@@ -47,7 +47,7 @@
 
 * _**7R’s of Migration**_
 
- 1.  _**Re-Host**_ : Lift and shift ( running on onpremesis = running in the cloud )
+ 1.  _**Re-Host**_ : Lift and shift ( running on On-premises = running in the cloud )
 
  ![alt text](shots/4.PNG)
 
@@ -63,30 +63,27 @@
 
  6. _**Re-purchase**_ ( for using of internal tools )
 
- 7. _**Re-locate**_ ( having similar platform of work both in On premesis and cloud )
+ 7. _**Re-locate**_ ( having similar platform of work both in On premises and cloud )
 
-    ![alt text](shots/6.PNG)
-
-### Exercise
-
-* What are different types of hypervisors?
+ ![alt text](shots/6.PNG)
 
 ### Hypervisor Types
 
-* Hypervisors are of two types
-    * Type I hypervisor
+* Hypervisors are of two types :
+
+ 1. Type I hypervisor
 
     ![alt text](shots/7.PNG)
 
-    * Type II hypervisor
+ 2. Type II hypervisor
 
     ![alt text](shots/8.PNG)
 
 * Virtualization
 
-![alt text](shots/9.PNG)
+  ![alt text](shots/9.PNG)
 
-### What does Migration mean in the context of server
+#### What does migration mean in the Context of Server ?
 
 * Contents of the disk are replicated to AWS which will eventually create Amazon Machine Images (AMI)
 
