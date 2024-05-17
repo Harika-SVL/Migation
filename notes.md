@@ -271,7 +271,7 @@ GRANT ALL PRIVILEGES ON *.* to 'nop'@'%';
 FLUSH PRIVILEGES;
 exit
 ```
-* Lets configure ecommerce application in webpage `http://<ip>:5000`
+* Let's configure ecommerce application in webpage `http://<ip>:5000`
 * Enter database details and credentials `nop/nop12345`
 * wait for few minutes for the page to be reloaded
 
@@ -279,6 +279,95 @@ exit
 
 ### AWS Migration P2V
 
-* Refer Here for the docs
-Refer Here for the first time setup guide
-Steps
+* For the doc's
+
+    [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html ] 
+
+* For the first time setup guide
+
+    [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/first-time-setup-gs.html ]
+
+* Steps
+
+
+
+
+* Create a user with AWSApplicationMigrationAgentInstallationPolicy policy
+* Now follow the instructions as mentioned in the page
+
+
+
+
+
+
+
+
+
+* We will continue from the state where initial sync is complete
+
+* We are continuing on migration, we need to wait for initial sync to complete and then start replication
+* Watch classroom video for more information.
+* Last state at the end of session
+
+
+
+* IN todays session, we were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
+
+### AWS Database Migration Service
+
+* Database Migration overview
+
+![alt text](shots/14.PNG)
+
+* We will be migrating from on-prem mysql to aws rds for mysql
+* Lets create an aws rds for mysql
+* Lets create replication instances
+* Lets create a migration task
+* Wait the migration to be complete
+* For screenshots refer classroom video
+
+### Storage Migration
+
+* AWS supports two types of storage migrations
+    * Online:
+        * Snowball edge:
+        * Storage Gateway with local tape gateway, file gateway and volume gateway
+    * Offline: To perform offline transfers we have AWS Snow Family devices
+        * Snowcone
+        * Snowball
+        * Snowmobile
+
+### Modernization
+
+* After workloads are migrated to AWS, we can modernize them to Cloud Native Architectures
+* Popular options
+    * Microservices
+        * Event based Micro-services
+    * Serverless
+    * Data architectures
+        * Data lakes
+        * Data Analytics
+        * Integration with AI/ML
+
+### AWS Backup and Disaster Recovery
+
+* BCDR (Business Continuity and Disaster Recovery)
+
+
+
+
+### AWS Backup Service
+
+* Supported Resources 
+
+    [ Refer Here : https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#supported-resources ]
+
+#### Creating a Backup for EC2 instance
+
+* Create an ec2 instance and install something
+* Lets create a backup plan
+
+
+
+* Ensure you choose resources filtered by tags
+* Wait for the schedule to see the backup or we can create an on-demand backup
