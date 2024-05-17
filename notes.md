@@ -27,9 +27,9 @@
 
 * _**Migration**_ : i.e. move the applications / data on your physical servers into AWS
 * Migration based on workloads is classified into three types :
-  1. Server Migration
-  2. Database Migration
-  3. Storage Migration
+ 1. Server Migration
+ 2. Database Migration
+ 3. Storage Migration
 
 ### Organic India Corp Application Architecture
 
@@ -38,35 +38,34 @@
 ### Order of Migration
 
 * Always from least dependent to most dependent
-* In this case
-    * Storage Layer and DB Layer are least dependent
+* In this case :
+    * Storage Layer and DB Layer ( least dependent )
     * Application Layer
-    * Presentation Layer (Most Dependent)
+    * Presentation Layer ( Most Dependent )
 
 ### Migration Strategies
 
-* 7R’s of migration
-    * Re-Host: Lift and shift
+* _**7R’s of Migration**_
+
+ 1.  _**Re-Host**_ : Lift and shift ( running on onpremesis = running in the cloud )
 
     ![alt text](shots/4.PNG)
 
-    * Re-platform: Lift tinker and shift
+ 2. _**Re-platform**_ : Lift tinker and shift ( lifting with approximately required changes )
 
     ![alt text](shots/5.PNG)
 
-    * Re-factor/Re-architect: Re-write the complete application in a modern cloud native way.
-    * Retain
-    * Retire
-    * Re-purchase
-    * Re-locate
+ 3. _**Re-factor/Re-architect**_ : Re-write the complete application in a modern cloud native way ( example : shifting to microservices )
+
+ 4. _**Retain**_ ( postponing migration )
+
+ 5. _**Retire**_ ( stopping migration )
+
+ 6. _**Re-purchase**_ ( for using of internal tools )
+
+ 7. _**Re-locate**_ ( having similar platform of work both in On premesis and cloud )
 
     ![alt text](shots/6.PNG)
-
-### Terms
-
-* Hypervisor
-* Greenfield and Brownfield
-* P2V and V2V
 
 ### Exercise
 
