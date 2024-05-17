@@ -1,19 +1,19 @@
 ### Story of Organic India Corp ( some random organisation )
 
 * This organization runs an e-commerce application for selling organic fmcg
-* This organization has datacenter in hyderabad
+* This organization has it's Datacenter in Hyderabad
 
 ![alt text](shots/1.PNG)
 
 #### Problems
 
-* From the 1 – 5 of every month orders increase. Right now Organic India Corp has 16 VMs where they are running backend services. Inspite of this from 1-5 customers are facing latency issues and slow responses
-* Right now this organization is running only in one data center which is a single point of failure, so they have one more datacenter with same number of servers in noida.
-* So, architect of Organic India Corp has suggested to move to AWS
+* From the 1st – 5th of every month, orders increase. Right now Organic India Corp has sixteen VMs where they are running backend services. Inspite of this from one of five customers are facing latency issues and slow responses
+* Right now this organization is running only in one Datacenter which is a single point of failure, so they have one more datacenter with same number of servers in noida
+* So, the architect of Organic India Corp has suggested to move to AWS ( cloud )
 
-#### How can AWS Solve these problems ?
+#### How can AWS solve these problems ?
 
-* Let's understand basic merits of cloud (AWS)
+* Let's understand basic merits of the AWS cloud :
     * _**Global presence**_
     * _**Elasticity**_ : Automatically increasing and decreasing the resources based on some dynamic metrics
     * _**Disaster Recovery**_ is easier to setup
@@ -23,7 +23,7 @@
 
 ![alt text](shots/2.PNG)
 
-#### How to Move to AWS ?
+#### How to move to AWS ?
 
 * _**Migration**_ : i.e. move the applications / data on your physical servers into AWS
 * Migration based on workloads is classified into three types :
@@ -31,7 +31,7 @@
  2. Database Migration
  3. Storage Migration
 
-### Organic India Corp Application Architecture
+### Organic India Corp Application Architecture :
 
 ![alt text](shots/3.PNG)
 
@@ -39,43 +39,41 @@
 
 * Always from least dependent to most dependent
 * In this case :
-    * Storage Layer and DB Layer ( least dependent )
+    * Storage Layer and DB Layer ( Least Dependent )
     * Application Layer
     * Presentation Layer ( Most Dependent )
 
-### Migration Strategies
+### Migration Strategies => _**7R’s of Migration**_
 
-* _**7R’s of Migration**_
-
- 1.  _**Re-Host**_ : Lift and shift ( running on On-premises = running in the cloud )
+ 1.  _**RE-HOST**_ : Lift and shift ( running on On-premises = running in the Cloud )
 
  ![alt text](shots/4.PNG)
 
- 2. _**Re-platform**_ : Lift tinker and shift ( lifting with approximately required changes )
+ 2. _**RE-PLATFORM**_ : Lift tinker and shift ( lifting with approximately required changes )
 
  ![alt text](shots/5.PNG)
 
- 3. _**Re-factor/Re-architect**_ : Re-write the complete application in a modern cloud native way ( example : shifting to microservices )
+ 3. _**RE-FACTOR / RE-ARCHITECT**_ : Re-write the complete application in a modern cloud native way ( example : shifting to microservices )
 
- 4. _**Retain**_ ( postponing migration )
+ 4. _**RETAIN**_ ( postponing migration )
 
- 5. _**Retire**_ ( stopping migration )
+ 5. _**RRETIRE**_ ( stopping migration )
 
- 6. _**Re-purchase**_ ( for using of internal tools )
+ 6. _**RE-PURCHASE**_ ( for using of internal tools )
 
- 7. _**Re-locate**_ ( having similar platform of work both in On premises and cloud )
+ 7. _**RE-LOCATE**_ ( having similar platform of work, both in On premises and Cloud )
 
  ![alt text](shots/6.PNG)
 
-### Hypervisor Types
+### HYPERVISOR Types
 
 * Hypervisors are of two types :
 
- 1. Type I hypervisor
+ 1. Type - I hypervisor
 
     ![alt text](shots/7.PNG)
 
- 2. Type II hypervisor
+ 2. Type - II hypervisor
 
     ![alt text](shots/8.PNG)
 
@@ -85,7 +83,7 @@
 
 #### What does migration mean in the Context of Server ?
 
-* Contents of the disk are replicated to AWS which will eventually create Amazon Machine Images (AMI)
+* Contents of the disk are replicated to AWS which will eventually create _**Amazon Machine Images (AMI)**_
 
 ![alt text](shots/10.PNG)
 
@@ -93,17 +91,17 @@
 
 ### Migration approaches
 
-* We have two approaches
-    * One-time migration/replication
-    * On-going replication/migration
+* We have two approaches :
+ 1. One-time migration / replication
+  2. On-going replication /migration
 
 ### Terms
 
 * AWS Partner network
 
-### What is supported ways by AWS Migration ?
+### What is supported ways by AWS migration ?
 
-* Agent vs Agentless
+* Agent v/s Agentless
 
 Preview
 
@@ -115,12 +113,12 @@ Preview
 ### Migration Steps
 
 * In AWS We are going to perform
-    * P2V
-    * V2V
+    * P2V ( Physical to Virtual)
+    * V2V ( Virtual to Virtual )
 
 ### Simulating On-premises
 
-* Since we dont have physical infra, we will be simulating this on cloud (AWS/Azure)
+* Since we dont have physical infra, we will be simulating this on cloud ( AWS / Azure )
 
 ![alt text](shots/11.PNG)
 
