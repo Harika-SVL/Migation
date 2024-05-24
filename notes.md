@@ -93,13 +93,13 @@
 
 * We have two approaches :
  1. One-time migration / replication
-2. On-going replication / migration
+ 2. On-going replication / migration
 
 ### What is supported ways by AWS migration ?
 
-* Agent v/s Agentless
+* Agent V/S Agentless
 
-Preview
+
 
 ### Assumptions
 
@@ -120,11 +120,11 @@ Preview
 
 ### Migration Steps
 
-* Migration workflow 
+* Workflow 
 
     [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/migration-workflow-gs.html ]
 
-* Migration limits 
+* Limits 
 
     [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/MGN-service-limits.html ]
 
@@ -132,14 +132,14 @@ Preview
 
     [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/Supported-Operating-Systems.html ]
 
-* Steps
+* Steps :
 
 ![alt text](shots/12.PNG)
 
 ### Source Environment Prepartion
 
-* For this activity we will be installing nop commerce
-* Overview of architecture
+* For this activity we will be installing nopCommerce
+* Overview of architecture :
 
 ![alt text](shots/13.PNG)
 
