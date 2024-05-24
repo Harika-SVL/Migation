@@ -177,7 +177,7 @@ Preview
     
     [ Refer Here : https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?pivots=os-linux-ubuntu-2004&tabs=dotnet8 ]
 
-    * Download nopcommerce Unzip and the nopCommerce zip file
+    * Install Unzip and download the nopCommerce zip file
     ```
      sudo apt install unzip -y 
     ```
@@ -221,13 +221,13 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 [Install]
 WantedBy=multi-user.target
 ```
-* Now execute
+* Now execute with the following commands :
 ```
 sudo systemctl enable nopCommerce.service
 sudo systemctl start nopCommerce.service
 sudo systemctl status nopCommerce.service
 ```
-* Now access the application using http://:5000
+* Now access the application using `http://<ip-address>:5000`
 
 
 
@@ -260,8 +260,8 @@ GRANT ALL PRIVILEGES ON *.* to 'nop'@'%';
 FLUSH PRIVILEGES;
 exit
 ```
-* Let's configure ecommerce application in webpage `http://<ip> :5000`
-* Enter database details and credentials `nop/nop12345`
+* Let's configure ecommerce application in webpage `http://<ip-address>:5000`
+* Enter database details and credentials `nop / nop12345`
 * wait for few minutes for the page to be reloaded
 
 
@@ -295,33 +295,30 @@ exit
 * We will continue from the state where initial sync is complete
 
 * We are continuing on migration, we need to wait for initial sync to complete and then start replication
-* Watch classroom video for more information.
-* Last state at the end of session
 
 
 
-* IN todays session, we were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
+* We were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
 
 ### AWS Database Migration Service
 
-* Database Migration overview
+* Overview
 
 ![alt text](shots/14.PNG)
 
-* We will be migrating from on-prem mysql to aws rds for mysql
-* Lets create an aws rds for mysql
-* Lets create replication instances
-* Lets create a migration task
-* Wait the migration to be complete
-* For screenshots refer classroom video
+* We will be migrating from on-prem mysql to AWS rds for mysql
+* Let's create an AWS rds for mysql
+* Let's create replication instances
+* Let's create a migration task
+* Wait till the migration gets completed
 
 ### Storage Migration
 
-* AWS supports two types of storage migrations
-    * Online:
-        * Snowball edge:
+* AWS supports two types of storage migrations :
+    * _**Online**_ :
+        * Snowball edge
         * Storage Gateway with local tape gateway, file gateway and volume gateway
-    * Offline: To perform offline transfers we have AWS Snow Family devices
+    * _**Offline**_ : To perform offline transfers we have AWS Snow Family devices
         * Snowcone
         * Snowball
         * Snowmobile
@@ -354,7 +351,7 @@ exit
 #### Creating a Backup for EC2 instance
 
 * Create an ec2 instance and install something
-* Lets create a backup plan
+* Let's create a backup plan
 
 
 
