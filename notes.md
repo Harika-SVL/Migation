@@ -1,4 +1,4 @@
-### Story of Organic India Corp ( some random organisation )
+### Story of Organic India Corp ( some random organization )
 
 * This organization runs an e-commerce application for selling organic fmcg
 * This organization has it's Datacenter in Hyderabad
@@ -7,8 +7,8 @@
 
 #### Problems
 
-* From the 1st – 5th of every month, orders increase. Right now Organic India Corp has sixteen VMs where they are running backend services. Inspite of this from one of five customers are facing latency issues and slow responses
-* Right now this organization is running only in one Datacenter which is a single point of failure, so they have one more datacenter with same number of servers in noida
+* From the 1st to 5th of every month, orders increase. Right now Organic India Corp has sixteen VMs where they are running backend services. Inspite of this, one of every five customers are facing latency issues and slow responses
+* Right now this organization is running only in one Datacenter which is a single point of failure, so they have one more Datacenter with same number of servers in noida
 * So, the architect of Organic India Corp has suggested to move to AWS ( cloud )
 
 #### How can AWS solve these problems ?
@@ -16,7 +16,7 @@
 * Let's understand basic merits of the AWS cloud :
     * _**Global presence**_
     * _**Elasticity**_ : Automatically increasing and decreasing the resources based on some dynamic metrics
-    * _**Disaster Recovery**_ is easier to setup
+    * _**Disaster Recovery**_ : It is easier to setup
     * _**Pay as you go**_
 
 ### Service Models : IaaS  v/s PaaS  v/s SaaS 
@@ -25,7 +25,7 @@
 
 #### How to move to AWS ?
 
-* _**Migration**_ : i.e. move the applications / data on your physical servers into AWS
+* _**Migration**_ : i.e. move the applications / data on your physical servers into AWS ( cloud )
 * Migration based on workloads is classified into three types :
  1. Server Migration
  2. Database Migration
@@ -61,7 +61,7 @@
 
  6. _**RE-PURCHASE**_ ( for using of internal tools )
 
- 7. _**RE-LOCATE**_ ( having similar platform of work, both in On premises and Cloud )
+ 7. _**RE-LOCATE**_ ( having similar platform of work, both in On-premises and Cloud )
 
  ![alt text](shots/6.PNG)
 
@@ -93,11 +93,7 @@
 
 * We have two approaches :
  1. One-time migration / replication
-  2. On-going replication /migration
-
-### Terms
-
-* AWS Partner network
+2. On-going replication / migration
 
 ### What is supported ways by AWS migration ?
 
@@ -112,21 +108,30 @@ Preview
 
 ### Migration Steps
 
-* In AWS We are going to perform
+* In AWS we are going to perform
     * P2V ( Physical to Virtual)
     * V2V ( Virtual to Virtual )
 
 ### Simulating On-premises
 
-* Since we dont have physical infra, we will be simulating this on cloud ( AWS / Azure )
+* Since we don't have physical infra, we will be simulating this on cloud ( AWS / Azure )
 
 ![alt text](shots/11.PNG)
 
 ### Migration Steps
 
-* Migration workflow Refer Here
-* Migration limits Refer Here
-* Supported OS Refer Here
+* Migration workflow 
+
+    [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/migration-workflow-gs.html ]
+
+* Migration limits 
+
+    [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/MGN-service-limits.html ]
+
+* Supported OS 
+
+    [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/Supported-Operating-Systems.html ]
+
 * Steps
 
 ![alt text](shots/12.PNG)
@@ -134,14 +139,14 @@ Preview
 ### Source Environment Prepartion
 
 * For this activity we will be installing nop commerce
-* overview of architecture
+* Overview of architecture
 
 ![alt text](shots/13.PNG)
 
 * Create two
-    * Azure ubuntu linux vms of size standard_b1s
+    * Azure ubuntu linux VMs of size standard_b1s
     * AWS ubuntu linux instances of size t2.micro or t3.micro
-* Consider one vm to be database server and install mysql
+* Consider one VM to be database server and install mysql
     * Steps: 
     
     [ Refer Here : https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04 ]
@@ -158,21 +163,21 @@ Preview
     FLUSH PRIVILEGES;
     exit
     ```
-    * To verify the nop execute mysql -u nop -p enter password and you should be allowed in sql shell
+    * To verify the `nop,` execute `mysql -u nop -p enter password` and you should be allowed in sql shell
 
 
 
-    * Note: we need to fix the issue with external connectivity
-* Application: nopcommerce 
+    * Note : we need to fix the issue with external connectivity
+* Application : nopcommerce 
 
     [ Refer Here : https://docs.nopcommerce.com/en/installation-and-upgrading/installing-nopcommerce/installing-on-linux.html ]
 
-* Steps:
+* Steps :
     * Install .net core 7 
     
     [ Refer Here : https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?pivots=os-linux-ubuntu-2004&tabs=dotnet8 ]
 
-    * download nopcommerce zip
+    * Download nopcommerce Unzip and the nopCommerce zip file
     ```
      sudo apt install unzip -y 
     ```
@@ -186,16 +191,16 @@ Preview
     sudo mkdir bin
     sudo mkdir logs 
     ```
-* Create a user called as nop
+* Create a user called as `nop`
 ```
 sudo useradd nop
 ```
-* Give full permissions to `/usr/share/nopCommerce` to nop
+* Give full permissions to `/usr/share/nopCommerce` to `nop`
 ```
 sudo chgrp -R nop /usr/share/nopCommerce/
 sudo chown -R nop /usr/share/nopCommerce/
 ```
-* Create a file in `/etc/systemd/system/nopCommerce.service` with following content
+* Create a file in `/etc/systemd/system/nopCommerce.service` with following content :
 ```
 [Unit]
 Description=Example nopCommerce app running on Xubuntu
@@ -230,32 +235,32 @@ sudo systemctl status nopCommerce.service
 
     [ Refer Here : https://www.techrepublic.com/article/create-mysql-8-database-user-remote-access-databases/ ]
 
-* Step 1:
+* Step-1 :
 ```
-The first thing we must do is configure MySQL for remote connections. To do this, log into your MySQL database server and open the configuration file with the command:
+The first thing we must do is configure MySQL for remote connections. To do this, log into your MySQL database server and open the configuration file with the command :
 
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
-In that file, look for the line:
+In that file, look for the line :
 
 bind-address = 127.0.0.1
 
-Change that line to:
+Change that line to :
 
 bind-address = 0.0.0.0
 
-Save and close the file. Restart the MySQL service with:
+Save and close the file. Restart the MySQL service with :
 
 sudo systemctl restart mysql
 ```
-* Step 2: launch mysql shell `sudo mysql`
+* Step-2 : Launch mysql shell `sudo mysql`
 ```
 CREATE USER 'nop'@'%' IDENTIFIED BY 'nop12345';
 GRANT ALL PRIVILEGES ON *.* to 'nop'@'%';
 FLUSH PRIVILEGES;
 exit
 ```
-* Let's configure ecommerce application in webpage `http://<ip>:5000`
+* Let's configure ecommerce application in webpage `http://<ip> :5000`
 * Enter database details and credentials `nop/nop12345`
 * wait for few minutes for the page to be reloaded
 
@@ -263,21 +268,21 @@ exit
 
 ### AWS Migration P2V
 
-* For the doc's
+* For the doc's :
 
     [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html ] 
 
-* For the first time setup guide
+* For the first time setup guide :
 
     [ Refer Here : https://docs.aws.amazon.com/mgn/latest/ug/first-time-setup-gs.html ]
 
-* Steps
+* Steps :
 
 
 
 
-* Create a user with AWSApplicationMigrationAgentInstallationPolicy policy
-* Now follow the instructions as mentioned in the page
+* Create a user with AWS Application Migration Agent Installation Policy 
+* Now follow the instructions as mentioned in the page :
 
 
 
