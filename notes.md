@@ -93,22 +93,23 @@
 
 * We have two approaches :
  1. One-time migration / replication
- 2. On-going replication / migration
+ 2. On-going migration / replication 
 
 ### What is supported ways by AWS migration ?
 
+* AWS Partner Network
 * Agent V/S Agentless
 
-
+![alt text](shots/15.PNG)
 
 ### Assumptions
 
-* We are not seeking help from partner network
-* We are not using any third party applications, we are using AWS tools
+1. We are not seeking help from partner network
+2. We are not using any third party applications, we are using AWS tools
 
 ### Migration Steps
 
-* In AWS we are going to perform
+* In AWS we are going to perform :
     * P2V ( Physical to Virtual)
     * V2V ( Virtual to Virtual )
 
