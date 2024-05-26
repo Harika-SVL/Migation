@@ -281,7 +281,7 @@ exit
 
 
 
-### AWS Migration P2V
+### AWS Migration P2V 
 
 * For the doc's :
 
@@ -293,16 +293,34 @@ exit
 
 * Steps :
 
+=> Navigate to Application Migration Service => Set up Application => Set up service
+
+
+
+=> Source servers => Add server
 
 
 
 * Create a user with AWS Application Migration Agent Installation Policy 
 * Now follow the instructions as mentioned in the page :
 
+=> AWS Replication Agent installation => Select operating system : Linux => Select replication preferences : Replicate all disks => provide required credentials => IAM access key ID :   => IAM secret access key :  
 
 
 
+=> copy the input command for the source server => Back
 
+
+
+=> On the command line, run the command copied earlier
+
+
+
+=> follow the following commands for installing Replication Agent:
+```
+ls
+sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-key-id '' --aws-secret-access-key '' --no-prompt 
+```
 
 
 
