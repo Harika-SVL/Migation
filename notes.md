@@ -250,22 +250,23 @@ sudo systemctl status nopCommerce.service
     [ Refer Here : https://www.techrepublic.com/article/create-mysql-8-database-user-remote-access-databases/ ]
 
 * Step-1 :
+
+* The first thing we must do is configure MySQL for remote connections. To do this, log into your MySQL database server and open the configuration file with the command :
 ```
-The first thing we must do is configure MySQL for remote connections. To do this, log into your MySQL database server and open the configuration file with the command :
-
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
-
-In that file, look for the line :
-
+```
+* In that file, look for the line :
+```
 bind-address = 127.0.0.1
-
-Change that line to :
-
+```
+* Change that line to :
+```
 bind-address = 0.0.0.0
-
-Save and close the file. Restart the MySQL service with :
-
+```
+* Save and close the file. Restart the MySQL service with :
+```
 sudo systemctl restart mysql
+sudo systemctl status mysql
 ```
 * Step-2 : Launch mysql shell `sudo mysql`
 ```
@@ -274,9 +275,9 @@ GRANT ALL PRIVILEGES ON *.* to 'nop'@'%';
 FLUSH PRIVILEGES;
 exit
 ```
-* Let's configure ecommerce application in webpage `http://<ip-address>:5000`
+* Let's configure ecommerce application in webpage `http://<ip-address>:5000` and create some sample data
 * Enter database details and credentials `nop / nop12345`
-* wait for few minutes for the page to be reloaded
+* restart and wait for few minutes for the page to be reloaded
 
 
 
