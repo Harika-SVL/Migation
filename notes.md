@@ -144,32 +144,37 @@
 
 ![alt text](shots/13.PNG)
 
-* Create two
-    * Azure ubuntu linux VMs of size standard_b1s
-    * AWS ubuntu linux instances of size t2.micro or t3.micro
+* Create two AWS ubuntu linux instances _**( nop, dbserver )**_ of size `t2.micro` or `t3.micro` and security group opened for both `3306` and `5000` ports _**( open all - all tcp, all traffic )**_
+
 * Consider one VM to be database server and install mysql
     * Steps: 
     
-    [ Refer Here : https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04 ]
+    [ Refer Here : https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04 ]
 
     ```
     sudo apt update
-    sudo apt install mysql-server
+    sudo apt install mysql-server -y
+    sudo systemctl start mysql.service
+    ```
+    * In the mysql shell try to execute following commands 
+    `username : nop , password : nop12345` :
+    ```
     sudo mysql
-    ```
-    * In the mysql shell try to execute following commands
-    ```
     CREATE USER 'nop'@'localhost' IDENTIFIED BY 'nop12345';
     GRANT ALL PRIVILEGES ON *.* TO 'nop'@'localhost';
     FLUSH PRIVILEGES;
     exit
     ```
-    * To verify the `nop,` execute `mysql -u nop -p enter password` and you should be allowed in sql shell
+    * To verify the `nop` execute `mysql -u nop -p` and you should be allowed in sql shell
+    ```
+    show databases;
+    Select user();
+    ```
 
 
+    * _**NOTE**_ : we need to fix the issue with external connectivity to the database
 
-    * Note : we need to fix the issue with external connectivity
-* Application : nopcommerce 
+* Application : nopCommerce 
 
     [ Refer Here : https://docs.nopcommerce.com/en/installation-and-upgrading/installing-nopcommerce/installing-on-linux.html ]
 
@@ -178,7 +183,7 @@
     
     [ Refer Here : https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?pivots=os-linux-ubuntu-2004&tabs=dotnet8 ]
 
-    * Install Unzip and download the nopCommerce zip file
+    * Install `Unzip` and download the nopCommerce zip file
     ```
      sudo apt install unzip -y 
     ```
@@ -190,11 +195,16 @@
     sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-4.60.3/nopCommerce_4.60.3_NoSource_linux_x64.zip
     sudo unzip nopCommerce_4.60.3_NoSource_linux_x64.zip
     sudo mkdir bin
-    sudo mkdir logs 
+    sudo mkdir logs
+    ```
+    * To check whether application works type the command and expose the `http://<public_ip>:5000` over the browser
+    ```
+    sudo /usr/bin/dotnet Nop.Web.dll --urls "http://0.0.0.0:5000"
     ```
 * Create a user called as `nop`
 ```
-sudo useradd nop
+sudo uadduser nop
+password :nop12345
 ```
 * Give full permissions to `/usr/share/nopCommerce` to `nop`
 ```
@@ -202,6 +212,9 @@ sudo chgrp -R nop /usr/share/nopCommerce/
 sudo chown -R nop /usr/share/nopCommerce/
 ```
 * Create a file in `/etc/systemd/system/nopCommerce.service` with following content :
+```
+sudo vi /etc/systemd/system/nopCommerce.service
+```
 ```
 [Unit]
 Description=Example nopCommerce app running on Xubuntu
