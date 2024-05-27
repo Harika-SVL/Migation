@@ -170,7 +170,7 @@
     show databases;
     Select user();
     ```
-
+    ![alt text](shots/16.PNG)
 
     * _**NOTE**_ : we need to fix the issue with external connectivity to the database
 
@@ -243,7 +243,7 @@ sudo systemctl status nopCommerce.service
 ```
 * Now access the application using `http://<ip-address>:5000`
 
-
+![alt text](shots/17.PNG)
 
 * Enabling mysql connections from anywhere 
 
@@ -277,9 +277,9 @@ exit
 ```
 * Let's configure ecommerce application in webpage `http://<ip-address>:5000` and create some sample data
 * Enter database details and credentials `nop / nop12345`
-* restart and wait for few minutes for the page to be reloaded
+* Restart and wait for few minutes for the page to be reloaded
 
-
+![alt text](shots/18.PNG)
 
 ### AWS Migration P2V 
 
@@ -295,41 +295,40 @@ exit
 
 => Navigate to Services => Migration & Transfer => AWS Application Migration Service => Set up Application => Set up service
 
-
+![alt text](shots/19.PNG)
 
 => Source servers => Add server
 
-
+![alt text](shots/20.PNG)
 
 * Create a user with AWS Application Migration Agent Installation Policy 
 * Now follow the instructions as mentioned in the page :
 
 => AWS Replication Agent installation => Select operating system : Linux => Select replication preferences : Replicate all disks => provide required credentials => IAM access key ID :   => IAM secret access key :  
 
-
+![alt text](shots/21.PNG)
 
 => copy the input command for the source server => Back
 
-
+![alt text](shots/22.PNG)
 
 => On the command line, run the command copied earlier
 
-
+![alt text](shots/23.PNG)
 
 => follow the following commands for installing Replication Agent:
 ```
 ls
 sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-key-id '' --aws-secret-access-key '' --no-prompt 
 ```
-
-
-
-
-* We will continue from the state where initial sync is complete
+![alt text](shots/24.PNG)
+![alt text](shots/25.PNG)
+![alt text](shots/26.PNG)
+![alt text](shots/27.PNG)
 
 * We are continuing on migration, we need to wait for initial sync to complete and then start replication
 
-
+![alt text](shots/28.PNG)
 
 * We were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
 
@@ -372,7 +371,7 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 
 * BCDR (Business Continuity and Disaster Recovery)
 
-
+![alt text](shots/29.PNG)
 
 
 ### AWS Backup Service
@@ -386,7 +385,9 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 * Create an ec2 instance and install something
 * Let's create a backup plan
 
-
+![alt text](shots/30.PNG)
 
 * Ensure you choose resources filtered by tags
 * Wait for the schedule to see the backup or we can create an on-demand backup
+
+![alt text](shots/31.PNG)
