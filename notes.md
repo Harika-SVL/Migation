@@ -293,7 +293,7 @@ exit
 
 * Steps :
 
-=> Navigate to Application Migration Service => Set up Application => Set up service
+=> Navigate to Services => Migration & Transfer => AWS Application Migration Service => Set up Application => Set up service
 
 
 
