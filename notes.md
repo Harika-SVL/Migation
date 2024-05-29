@@ -165,20 +165,25 @@
     FLUSH PRIVILEGES;
     exit
     ```
+    ![alt text](shots/32.PNG)
+
     * To verify the `nop` execute `mysql -u nop -p` and you should be allowed in sql shell
     ```
     show databases;
     Select user();
     ```
+    ![alt text](shots/33.PNG)
+    ![alt text](shots/34.PNG)
     ![alt text](shots/16.PNG)
 
     * _**NOTE**_ : we need to fix the issue with external connectivity to the database
 
-* Application : nopCommerce 
+* _**Application : nopCommerce**_ 
 
     [ Refer Here : https://docs.nopcommerce.com/en/installation-and-upgrading/installing-nopcommerce/installing-on-linux.html ]
 
-* Steps :
+* _**Steps**_ :
+
     * Install .net core 7 
     
     [ Refer Here : https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?pivots=os-linux-ubuntu-2004&tabs=dotnet8 ]
