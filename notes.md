@@ -188,10 +188,14 @@
     
     [ Refer Here : https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?pivots=os-linux-ubuntu-2004&tabs=dotnet8 ]
 
+    ![alt text](shots/35.PNG)
+
     * Install `Unzip` and download the nopCommerce zip file
     ```
      sudo apt install unzip -y 
     ```
+    ![alt text](shots/36.PNG)
+
     [ Refer here : https://docs.nopcommerce.com/en/installation-and-upgrading/installing-nopcommerce/installing-on-linux.html ]
 
     ```
@@ -206,6 +210,8 @@
     ```
     sudo /usr/bin/dotnet Nop.Web.dll --urls "http://0.0.0.0:5000"
     ```
+    ![alt text](shots/37.PNG)
+
 * Create a user called as `nop`
 ```
 sudo uadduser nop
