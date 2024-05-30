@@ -222,6 +222,8 @@ password :nop12345
 sudo chgrp -R nop /usr/share/nopCommerce/
 sudo chown -R nop /usr/share/nopCommerce/
 ```
+![alt text](shots/38.PNG)
+
 * Create a file in `/etc/systemd/system/nopCommerce.service` with following content :
 ```
 sudo vi /etc/systemd/system/nopCommerce.service
@@ -246,13 +248,17 @@ Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 [Install]
 WantedBy=multi-user.target
 ```
+![alt text](shots/39.PNG)
+
 * Now execute with the following commands :
 ```
 sudo systemctl enable nopCommerce.service
 sudo systemctl start nopCommerce.service
 sudo systemctl status nopCommerce.service
 ```
-* Now access the application using `http://<ip-address>:5000`
+![alt text](shots/40.PNG)
+
+* Now access the application using `http://<public_ip>:5000`
 
 ![alt text](shots/17.PNG)
 
@@ -274,11 +280,15 @@ bind-address = 127.0.0.1
 ```
 bind-address = 0.0.0.0
 ```
+![alt text](shots/41.PNG)
+
 * Save and close the file. Restart the MySQL service with :
 ```
 sudo systemctl restart mysql
 sudo systemctl status mysql
 ```
+![alt text](shots/42.PNG)
+
 * Step-2 : Launch mysql shell `sudo mysql`
 ```
 CREATE USER 'nop'@'%' IDENTIFIED BY 'nop12345';
@@ -286,7 +296,13 @@ GRANT ALL PRIVILEGES ON *.* to 'nop'@'%';
 FLUSH PRIVILEGES;
 exit
 ```
+![alt text](shots/43.PNG)
+
 * Let's configure ecommerce application in webpage `http://<ip-address>:5000` and create some sample data
+
+![alt text](shots/44.PNG)
+![alt text](shots/45.PNG)
+
 * Enter database details and credentials `nop / nop12345`
 * Restart and wait for few minutes for the page to be reloaded
 
