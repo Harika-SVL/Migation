@@ -328,32 +328,37 @@ exit
 
 ![alt text](shots/20.PNG)
 
-* Create a user with AWS Application Migration Agent Installation Policy 
+* Create an IAM user with `AWS Application Migration Agent Installation Policy` or `Administrator Access`
+
 * Now follow the instructions as mentioned in the page :
 
 => AWS Replication Agent installation => Select operating system : Linux => Select replication preferences : Replicate all disks => provide required credentials => IAM access key ID :   => IAM secret access key :  
 
 ![alt text](shots/21.PNG)
 
-=> copy the input command for the source server => Back
+=> Run the installer command on the dbserver => Run the input command for the source server to install the Replication Agent => Back
 
 ![alt text](shots/22.PNG)
 
-=> On the command line, run the command copied earlier
-
-![alt text](shots/23.PNG)
-
-=> follow the following commands for installing Replication Agent:
+=> After logging into _**dbserver ( Linux machine )**_, run the commands mentioned above
 ```
+wget ...
 ls
 sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-key-id '' --aws-secret-access-key '' --no-prompt 
 ```
+![alt text](shots/23.PNG)
+
+* We also set up the Replication Agent on the nop machine ( Linux Instance) too with the same steps
+
 ![alt text](shots/24.PNG)
+
+* Check for the results at the Application Migration Service
+
 ![alt text](shots/25.PNG)
 ![alt text](shots/26.PNG)
 ![alt text](shots/27.PNG)
 
-* We are continuing on migration, we need to wait for initial sync to complete and then start replication
+* we need to wait for initial sync to complete and then start replication
 
 ![alt text](shots/28.PNG)
 
