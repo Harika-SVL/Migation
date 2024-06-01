@@ -409,8 +409,26 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 
 * We will be migrating from on-prem mysql to AWS rds for mysql
 * Let's create an AWS rds for mysql
+
+=> Navigate to Services => Select RDS => create databse => Create method : Standard create => Engine typr : Mysql => Templates : Free tier => DB instance identifier : qtnopsrvmigrated => Master username : nop => Master password : nop12345 => confirm password => Unable Enable storage autoscaling => Public access : yes => security group with 3306 port open => Create database
+
 * Let's create replication instances
+
+=> Navigate to Services => Select Database Migration Service => Replication instances => Create replication instance => Name : qtdbmigrate => Description: For migration => instance class : dms.t3.micro => Allocated storage 50GB => Select public accessible => Security group with 3306 port open => choose failover instance : Dev or test => Create replication instance
+
+* Wait untill they get available
+
+=> Goto endpoints => Create endpoint => select Source endpoint => Endpoint identifier : SourceDBid => Source engine : MYSQL => Access to endpoint database : Provide access information manually => Server name : <public_ip> of ec2 instance => Port : 3306 => Username : nop => Password : nop12345 => Test endpoint connection : Run test => Create endpoint
+
+* Now selecting target point
+
+=> => Goto endpoints => Create endpoint => select Target endpoint => Select RDS DB instance => Endpoint identifier : qtnopsrvmigrated => Target engine : MYSQL => 
 * Let's create a migration task
+
+=> Select database mifration tasks => Create task => Task identifier : migrate => select the created replication instance => Source database endpoint : sourcedbid => target database endpoint : qtnopsrvmigrated => Migration type : Migrate existing data
+
+=> Selection rules => Schema : Enter a schema => Source name : nopCommerce => Source table name : % => Strart migration task : Automatically on create => Create task 
+
 * Wait till the migration gets completed
 
 ### Storage Migration
