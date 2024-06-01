@@ -340,7 +340,7 @@ exit
 
 ![alt text](shots/22.PNG)
 
-=> After logging into _**dbserver ( Linux machine )**_, run the commands mentioned above
+=> After logging into _**dbserver ( Linux machine )**_ => resize the machine atleast to `t2.small` => run the commands mentioned below
 ```
 wget ...
 ls
@@ -363,6 +363,7 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 ![alt text](shots/28.PNG)
 
 * We were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
+* If the machines aren't working, just try rebooting  and restart them 
 
 ### AWS Database Migration Service
 
