@@ -365,6 +365,42 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 * We were able to launch test instances, finalize testing, launch cutover instances and finalize cutover
 * If the machines aren't working, just try rebooting  and restart them 
 
+=> Application Migration Service => After it reaches the `Ready for testing phase` => Select the machine => Navigate to Launch template => Unable `Active instance ritesizing` => Default instance size : t2.micro => Save template => goto Test and cutover => Launch test instances 
+
+* After the launch of instances we proceed to the cutover and automatically the testing instances get terminated 
+* And if the launch fails we again go through the testing
+
+=> Test and cutover => Mark as "Ready for cutover" => Launch cutover instances OR Revert to "Ready for testing"
+
+![alt text](shots/46.PNG)
+
+#### Lifecycle states 
+
+ 1. _**Not ready**_ – The server is undergoing the Initial Sync process and is not yet ready for testing
+    * Data replication can only commence once all of the Initial Sync steps have been completed
+
+ 2. _**Ready for testing**_ – The server has been successfully added to AWS Application Migration Service and data replication has started
+    * Test or cutover instances can now be launched for this server
+
+ 3. _**Test in progress**_ – A test instance is currently being launched for this server
+
+ 4. _**Ready for cutover**_ – This server has been tested and is now ready for a cutover instance to be launched
+
+ 5. _**Cutover in progress**_ – A cutover instance is currently being launched for this server
+
+ 6. _**Cutover complete**_ – This server has been cutover
+    *  All of the data on this server has been migrated to the cutover instance
+
+* The lifecycle always displays the Launch status, Last test, and Cutover status for each server that has undergone these stages
+
+* After the complete process we can delete all the created instances and if needed we can also archive
+
+=> Test and cutover => Terminate launched instances => ok
+
+=> Actions => mark as Archive
+
+* Here `Disk = volume` and `Snapshot = Backup of volume`
+
 ### AWS Database Migration Service
 
 * Overview
