@@ -436,9 +436,8 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 * AWS supports two types of storage migrations :
     * _**Online**_ :
         * Snowball edge
-        * Storage Gateway with local tape gateway, file gateway and volume gateway
-    * _**Offline**_ : To perform offline transfers we have AWS Snow Family devices ( One time activity .
-    )
+        * Storage Gateway ( only for a specific type of data ) with local tape gateway, file gateway and volume gateway
+    * _**Offline**_ : To perform offline transfers we have AWS Snow Family devices ( One time activity )
         * Snowcone
         * Snowball
         * Snowmobile
@@ -453,7 +452,7 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
     * Data architectures
         * Data lakes
         * Data Analytics
-        * Integration with AI/ML
+        * Integration with AI( Artificial Intelligence ) / ML ( Machine Learning )
 
 ### AWS Backup and Disaster Recovery
 
