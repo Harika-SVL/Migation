@@ -460,7 +460,6 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 
 ![alt text](shots/29.PNG)
 
-
 ### AWS Backup Service
 
 * Supported Resources 
@@ -469,12 +468,27 @@ sudo python3 aws-replication-installer-init.py --region ap-south-1 --aws-access-
 
 #### Creating a Backup for EC2 instance
 
-* Create an ec2 instance and install something
+* Create an ec2 instance and install something ( java , apache , nginx )
+```
+sudo apt update
+sudo apt install nginx -y
+```
 * Let's create a backup plan
+
+=> Navigate through Services => Select AWS Backup => Create Backup plan
+
+=> select Start with a template => Daily-35day-Retention => Backup plan name : Daily => Create a new vault => vault name : qt => Encription : (default) => create vault
+
+=> Backup rules : Daily backups => Edit => Backup frequency : Daily => Retention period : 2 Days => Create plan 
+
+=> Assign resource : ec2 => Include specific resource types => Assign resources => continue
 
 ![alt text](shots/30.PNG)
 
 * Ensure you choose resources filtered by tags
+
+tags => Env Equals Prod => assign
+
 * Wait for the schedule to see the backup or we can create an on-demand backup
 
 ![alt text](shots/31.PNG)
